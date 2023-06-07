@@ -1,0 +1,62 @@
+@import "./../../scss/variables";
+
+:host ::ng-deep {
+  .login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh;
+    &-image {
+      margin-bottom: 16px;
+    }
+    &-form {
+      min-width: 328px;
+      @media (max-width: 500px) {
+        min-width: 100%;
+      }
+      &_field {
+        width: 100%;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .mat-mdc-form-field {
+          width: 100%;
+          @media (max-width: 500px) {
+            width: 90%;
+          }
+        }
+        .mat-mdc-form-field-required-marker {
+          display: none;
+        }
+      }
+      &_action {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        @media (max-width: 500px) {
+          width: 95%;
+        }
+      }
+      &__button {
+        all: unset;
+        background: $login_buttons 0% 0% no-repeat padding-box;
+        box-shadow: 0px 3px 6px $field_text_color;
+        border-radius: 4px;
+        padding: 10px 27px;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+    }
+  }
+  .mat-mdc-floating-label {
+    mat-label {
+      color: $field_error_border_color;
+      font: normal normal normal 16px/24px $roboto;
+    }
+  }
+  .mat-mdc-form-field-error{
+    color: $field_error_border_color;
+  }
+}

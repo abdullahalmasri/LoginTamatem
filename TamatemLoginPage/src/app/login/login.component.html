@@ -1,0 +1,31 @@
+<div class="login">
+  <div class="login-image">
+    <img src=" https://avatars.githubusercontent.com/u/124091983" alt="Logo">
+  </div>
+  <form class="login-form" (ngSubmit)="onSubmit()" [formGroup]="loginFormGroup">
+    <div class="login-form_field">
+      <mat-form-field appearance="outline">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" formControlName="email">
+        <mat-error *ngIf="loginFormGroup.get('email')?.hasError('required') && (loginFormGroup.get('email')?.touched)">
+          This field is required
+        </mat-error>
+        <mat-error *ngIf="loginFormGroup.get('email')?.hasError('email') && (loginFormGroup.get('email')?.touched)">
+          Email format not correct
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="login-form_field">
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input type="password" matInput placeholder="Password" formControlName="password">
+        <mat-error *ngIf="loginFormGroup.get('password')?.hasError('required') && (loginFormGroup.get('password')?.touched)">
+          This field is required
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="login-form_action">
+      <button class="login-form__button" type="submit">Login</button>
+    </div>
+  </form>
+</div>
